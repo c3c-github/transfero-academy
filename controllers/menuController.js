@@ -57,10 +57,7 @@ const thanks = (req, res) => {
                 }
                 else{
                     for(var i =0 ; i < req.body.product.length; i++){
-                        product = product + req.body.product[i];
-                        if((i+1) != req.body.product.length){
-                            product = product + ',';
-                        }
+                        product = product + req.body.product[i]+';';
                     }
                 }
                 console.log('product: ',product);
