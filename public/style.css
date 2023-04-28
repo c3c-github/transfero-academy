@@ -11,23 +11,29 @@ html,body{
 }
 
 body{
-    background-color: #160F29;
-    /* border-top: 5px solid #3938F1;
-    border-bottom: 5px solid #3938F1; */
+    /*background-color: #160F29;
+    border-top: 5px solid #00FFFF;
+    border-bottom: 5px solid #00FFFF; */
     box-sizing: border-box;
+    
+
 }
 
 .content {
     box-sizing: border-box;
-    background-color: #160F29;
-    border-top: 5px solid #3938F1;
-    border-bottom: 5px solid #3938F1;
+    border-top: 5px solid #9C62FF;
+    border-bottom: 5px solid #9C62FF;
     text-align: center;
     margin: 0;
     min-height: 100%;
     display: grid;
     grid-auto-rows: minmax(auto, auto);
     justify-content: center;
+    background: rgba(22, 15, 41, 0.9);
+    /*background-image: url(/public/IMG_1453\ 1.png);*/
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
 }
 
 .logo-menu
@@ -88,7 +94,7 @@ input[type=text],input[type=email],input[type=phone], select {
     width: 300px;
     height: 40px;
     box-sizing: border-box;
-    border: 1px solid #3938F1;
+    border: 1px solid #00FFFF;
     border-radius: 6px;
     font-family: 'Montserrat';
     font-style: normal;
@@ -106,7 +112,7 @@ input::placeholder {
 }
 
 .checkboxes-section{
-    border: 1px solid #3938F1;
+    border: 1px solid #00FFFF;
     border-radius: 6px;
     font-family: 'Montserrat';
     font-style: normal;
@@ -114,13 +120,14 @@ input::placeholder {
     font-size: 13px;
     line-height: 165%;
     color: #FFFFFF;
+    text-align: left;
 }
 
 textarea {
     width: 300px;
     height: 100px;
     box-sizing: border-box;
-    border: 1px solid #3938F1;
+    border: 1px solid #00FFFF;
     border-radius: 6px;
     font-family: 'Montserrat';
     font-style: normal;
@@ -159,6 +166,7 @@ input[type=submit] {
     margin-bottom: 24px;
     background: #3938F1;
     cursor: pointer;
+    margin-top: 24px;
 }
 
 .thanks-square
@@ -166,7 +174,7 @@ input[type=submit] {
     box-sizing: border-box;   
     width: 288px;
     height: 205px;
-    border: 1px solid #3938F1;
+    border: 1px solid #00FFFF;
     border-radius: 6px;
 }
 
@@ -209,7 +217,7 @@ footer
 {
     height: 52px;
     left: 0px;
-    background: #3938F1;
+    background: #9C62FF;
 }
 
 .logo-websummit
@@ -304,11 +312,11 @@ footer
         left: 0;
         height: 40px;
         width: 40px;
-        border: 1px solid #3D3DFF;
+        border: 1px solid #00FFFF;
         transform: rotate(-45deg);;
     }
     .checkbox input:checked ~ .checkmark {
-        background-color: #3D3DFF;
+        background-color: #00FFFF;
       }
     input[type=submit]{
         float: right;
@@ -332,10 +340,10 @@ footer
         margin-bottom: 8%;
     }
     .thanks-h1{
-        font-size: 7rem;
+        font-size: 4.5rem;
     }
     .thanks-h2{
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
     .home-link{
         margin-top: 5%;

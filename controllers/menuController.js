@@ -18,6 +18,11 @@ const formCheckOut = (req, res) => {
 const formApp = (req, res) => {
     res.render("form", {form : {'name': 'APP'}} );
 }
+const formAcademy = (req, res) => {
+    res.render("form", {form : {'name': 'ACADEMY'}} );
+}
+
+
 
 const thanks = (req, res) => {
         // replace with your Salesforce Connected App credentials
@@ -67,13 +72,8 @@ const thanks = (req, res) => {
                 LastName : req.body.name,
                 Email : req.body.email,
                 MobilePhone : req.body.phone,
-                Company : req.body.company,
-                ProdutosDeinteresse__c : product,
-                Description : req.body.message,
-                JaInvesteCripto__c : req.body.cripto,
-                ColaboradorTransfero__c : req.body.ownerName,
+                WebSummitAcademy__c : product,
                 OrigemWebSummit__c : req.body.formType,
-                Advisor__c : req.body.advisor
             };  
     
             conn.sobject('Lead').create(lead, function(err, result) {
@@ -102,5 +102,6 @@ module.exports =  {
     formPrime,
     formCheckOut,
     formApp,
-    thanks
+    thanks,
+    formAcademy
 };

@@ -1,7 +1,7 @@
 const express = require('express');
-const {menu, formPay, formVentures, formPrime, formCheckOut, formApp, thanks } = require('../controllers/menuController');
+const {menu, formPay, formVentures, formPrime, formCheckOut, formApp, thanks, formAcademy } = require('../controllers/menuController');
 const router = express.Router();
-router.get('/', menu);
+router.get('/', formAcademy);
 router.get('/formPay', formPay);
 router.get('/formVentures', formVentures);
 router.get('/formPrime', formPrime);
