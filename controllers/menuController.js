@@ -65,7 +65,7 @@ const thanks = (req, res) => {
             
 
             const lead = {
-                RecordTypeId : '012HY0000004LXiYAM',
+                RecordTypeId : '012HY0000004LaSYAU',
                 LastName : req.body.name,
                 Email : req.body.email,
                 MobilePhone : req.body.phone,
