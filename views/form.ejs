@@ -7,48 +7,50 @@
     </head>    
 
 <body>
-    <div class="content">
-        <div class="home-button">
-            <a href="/" class="image-button">
-                <img src="/public/home.svg" alt="">
-            </a>
-        </div>        
-        <div class="logo-menu">
-            <img src="/public/logo-form-<%= form.name %>.svg" alt="">
-        </div> 
-   
+    <div class="image-background">
+        <div class="content">
+            <div class="home-button">
+                <a href="/" class="image-button">
+                    <img src="/public/home.svg" alt="">
+                </a>
+            </div>        
+            <div class="logo-menu">
+                <img src="/public/logo-form-<%= form.name %>.svg" alt="">
+            </div> 
+    
 
-        <form id="transferoForm" action="/submit-form" method="POST">        
-                <input type="text" id="name" name="name" placeholder="Nome" required ><br>
-                <input type="email" id="email" name="email" placeholder="E-mail" required><br>
-                <input type="phone" id="phone" name="phone" placeholder="Telefone" required><br>
-                <div class="checkboxes-section">
-                    <p>Você tem:</p>
-                    <div class="checkboxes-container">
-                        <label for="ensinoMedio" class="checkbox">Ensino médio completo
-                            <input type="checkbox" id="ensinoMedio" name="product" value="Ensino médio completo">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label for="maisDezoitoAnos" class="checkbox">Mais de 18 anos
-                            <input type="checkbox" id="maisDezoitoAnos" name="product" value="Mais de 18 anos">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label for="tempoDedicacao" class="checkbox">Tempo para se dedicar durante os seis meses de curso de forma integral
-                            <input type="checkbox" id="tempoDedicacao" name="product" value="Tempo para se dedicar durante os seis meses de curso de forma integral">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label for="residencia" class="checkbox">Residência no estado do Rio de Janeiro(RJ)
-                            <input type="checkbox" id="residencia" name="product" value="Residência no estado do Rio de Janeiro(RJ)">
-                            <span class="checkmark"></span>
-                        </label>
+            <form id="transferoForm" action="/submit-form" method="POST">        
+                    <input type="text" id="name" name="name" placeholder="Nome" required ><br>
+                    <input type="email" id="email" name="email" placeholder="E-mail"><br>
+                    <input type="phone" id="phone" name="phone" placeholder="Telefone"><br>
+                    <div class="checkboxes-section">
+                        <p>Você tem:</p>
+                        <div class="checkboxes-container">
+                            <label for="ensinoMedio" class="checkbox">Ensino médio completo
+                                <input type="checkbox" id="ensinoMedio" name="product" value="Ensino médio completo">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="maisDezoitoAnos" class="checkbox">Mais de 18 anos
+                                <input type="checkbox" id="maisDezoitoAnos" name="product" value="Mais de 18 anos">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="tempoDedicacao" class="checkbox">Tempo para se dedicar durante os seis meses de curso de forma integral
+                                <input type="checkbox" id="tempoDedicacao" name="product" value="Tempo para se dedicar durante os seis meses de curso de forma integral">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="residencia" class="checkbox">Residência no estado do Rio de Janeiro(RJ)
+                                <input type="checkbox" id="residencia" name="product" value="Residência no estado do Rio de Janeiro(RJ)">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <input type="submit" value="Enviar"><br>        
-            <div style="display: none;">
-                <input type="text" id="formType" name="formType" value=<%= form.name %>>
-            <div>
-            
-        </form>
+                    <input type="submit" value="Enviar"><br>        
+                <div style="display: none;">
+                    <input type="text" id="formType" name="formType" value=<%= form.name %>>
+                <div>
+                
+            </form>
+        </div>
     </div>
 </body>
 </html>

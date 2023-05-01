@@ -16,8 +16,19 @@ body{
     border-bottom: 5px solid #00FFFF; */
     box-sizing: border-box;
     
+    
+    
 
 }
+
+.image-background{
+    background: rgba(22, 15, 41, 0.9);
+    background-image: url(/public/IMG_1453\ 1.png);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
 
 .content {
     box-sizing: border-box;
@@ -29,11 +40,6 @@ body{
     display: grid;
     grid-auto-rows: minmax(auto, auto);
     justify-content: center;
-    background: rgba(22, 15, 41, 0.9);
-    /*background-image: url(/public/IMG_1453\ 1.png);*/
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    background-size: cover;
 }
 
 .logo-menu
@@ -121,6 +127,7 @@ input::placeholder {
     line-height: 165%;
     color: #FFFFFF;
     text-align: left;
+    background-color: #160F29;
 }
 
 textarea {
