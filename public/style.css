@@ -15,7 +15,10 @@ body{
     border-top: 5px solid #00FFFF;
     border-bottom: 5px solid #00FFFF; */
     box-sizing: border-box;
-    
+    background-color: #160F29;
+    border-bottom: 5px solid #9C62FF;
+
+
     
     
 
@@ -27,13 +30,13 @@ body{
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
+    
 }
 
 
 .content {
     box-sizing: border-box;
     border-top: 5px solid #9C62FF;
-    border-bottom: 5px solid #9C62FF;
     text-align: center;
     margin: 0;
     min-height: 100%;
@@ -195,6 +198,7 @@ input[type=submit] {
     text-align: center;
     letter-spacing: 0.03em;
     color: #FFFFFF;
+    line-height: inherit;
 }
 
 .thanks-h2
