@@ -1,36 +1,19 @@
 const jsforce = require('jsforce');
 
-const menu = (req, res) => {
-    res.render("menu", {} );
-}
-const formPay = (req, res) => {
-    res.render("form", {form : {'name': 'PAYMENTS'}} );
-}
-const formVentures = (req, res) => {
-    res.render("form", {form : {'name': 'VENTURES'}} );
-}
-const formPrime = (req, res) => {
-    res.render("form", {form : {'name': 'PRIME'}} );
-}
-const formCheckOut = (req, res) => {
-    res.render("form", {form : {'name': 'CHECKOUT'}} );
-}
 const formApp = (req, res) => {
     res.render("form", {form : {'name': 'APP'}} );
 }
-const formAcademy = (req, res) => {
-    res.render("form", {form : {'name': 'ACADEMY'}} );
-}
+
 
 
 
 const thanks = (req, res) => {
         // replace with your Salesforce Connected App credentials
-        const clientId = '3MVG9cHH2bfKACZa7IhT4bhgY3L.B7OfXN5.2Q8eEu_jK7ebe1SeIwayHY1AdDQt0rK7VYwgVMivS2ge1W86T';
-        const clientSecret = '325E76F1AE9726A62C8FAA69A0F7281078E5DDC5EA437053331913175F15EFF7';
-        const username = 'mauro.araripe@c3csoftware.com.br';
-        const password = 'c3c*2023';
-        const securityToken = 'czFFo1un2JJxVP88If9Zqh16';
+        const clientId = '3MVG9kBt168mda_.w.QvoiO2iDaMpEetoED2YQ29eJfNXjSEcwk2jxiakgaJ0I576b_55vQxuhzTI6gFK.LBS';
+        const clientSecret = 'B57FA523BEE888680A9D2D76A51BA8DAC42727367B40AB26952C63CA34BF0C11';
+        const username = 'deodato.cunha@c3csoftware.com.br';
+        const password = 'c3c2024*';
+        const securityToken = 'yG4BFdTwz11t80brbdAHLee0';
     
         const conn = new jsforce.Connection({
             oauth2: {
@@ -46,8 +29,6 @@ const thanks = (req, res) => {
             console.log('Access Token: ' + conn.accessToken);
             console.log('Instance URL: ' + conn.instanceUrl);
             console.log('body: ',req.body);
-            console.log('body.product: ',req.body.product);
-            console.log('body.product.typeof: ', typeof (req.body.product) )
 
             var product = '';
 
@@ -65,12 +46,12 @@ const thanks = (req, res) => {
             
 
             const lead = {
-                RecordTypeId : '012HY0000004LaSYAU',
+                RecordTypeId : '012N5000001ntcH',
                 LastName : req.body.name,
                 Email : req.body.email,
                 MobilePhone : req.body.phone,
-                WebSummitAcademy__c : product,
-                OrigemWebSummit__c : req.body.formType,
+                Description : product,
+                Company : req.body.company
             };  
     
             conn.sobject('Lead').create(lead, function(err, result) {
@@ -84,21 +65,11 @@ const thanks = (req, res) => {
 
         conn.version = '54.0';
 
-        /*
-            IndicacaoNome__c : req.body.ownerName
-        */
-
-
+        res.render("thanks", {form : {'name': ''}} );
         
 }
 
 module.exports =  {
-    menu,
-    formPay,
-    formVentures,
-    formPrime,
-    formCheckOut,
     formApp,
-    thanks,
-    formAcademy
+    thanks
 };

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Transfero</title>
+        <title>C3C Software</title>
         <link rel="stylesheet" href="/public/style.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     </head>    
@@ -15,40 +15,44 @@
                 </a>
             </div>        
             <div class="logo-menu">
-                <img src="/public/logo-form-<%= form.name %>.svg" alt="">
+                <img src="/public/logo-form.svg" alt="">
             </div> 
-    
 
             <form id="transferoForm" action="/submit-form" method="POST">        
                     <input type="text" id="name" name="name" placeholder="Nome" required ><br>
-                    <input type="email" id="email" name="email" placeholder="E-mail"><br>
-                    <input type="phone" id="phone" name="phone" placeholder="Telefone"><br>
+                    <input type="text" id="company" name="company" placeholder="Nome de sua empresa" required ><br>
+                    <input type="email" id="email" name="email" placeholder="Seu e-mail coorporativo" required ><br>
+                    <input type="phone" id="phone" name="phone" placeholder="Seu telefone" required ><br>
+                    <select name="cargo" id="cargo" required >
+                        <option value="">Nível do cargo</option>
+                        <option value="VP">VP Level</option>
+                        <option value="C">C Level</option>
+                        <option value="Director">Director</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Outros">Outros</option>
+                    </select>
                     <div class="checkboxes-section">
-                        <p>Você tem:</p>
+                        <p>Você tem interesse em:</p>
                         <div class="checkboxes-container">
-                            <label for="ensinoMedio" class="checkbox">Ensino médio completo
-                                <input type="checkbox" id="ensinoMedio" name="product" value="Ensino médio completo">
+                            <label for="plugin" class="checkbox">Plugin WhatsApp Slack
+                                <input type="checkbox" id="plugin" name="product" value="Plugin Whats App">
                                 <span class="checkmark"></span>
                             </label>
-                            <label for="maisDezoitoAnos" class="checkbox">Mais de 18 anos
-                                <input type="checkbox" id="maisDezoitoAnos" name="product" value="Mais de 18 anos">
+                            <label for="crédito" class="checkbox">Esteira de crédito
+                                <input type="checkbox" id="crédito" name="product" value="Esteira de crédito">
                                 <span class="checkmark"></span>
                             </label>
-                            <label for="tempoDedicacao" class="checkbox">Tempo para se dedicar durante os seis meses de curso de forma integral
-                                <input type="checkbox" id="tempoDedicacao" name="product" value="Tempo para se dedicar durante os seis meses de curso de forma integral">
+                            <label for="programaPontos" class="checkbox">Programa de pontos
+                                <input type="checkbox" id="programaPontos" name="product" value="Programa de pontos">
                                 <span class="checkmark"></span>
                             </label>
-                            <label for="residencia" class="checkbox">Residência no estado do Rio de Janeiro(RJ)
-                                <input type="checkbox" id="residencia" name="product" value="Residência no estado do Rio de Janeiro(RJ)">
+                            <label for="salesforce" class="checkbox">Consultoria e/ou suporte
+                                <input type="checkbox" id="salesforce" name="product" value="Consultoria e/ou Suporte">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                     </div>
                     <input type="submit" value="Enviar"><br>        
-                <div style="display: none;">
-                    <input type="text" id="formType" name="formType" value=<%= form.name %>>
-                <div>
-                
             </form>
         </div>
     </div>

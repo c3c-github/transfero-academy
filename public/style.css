@@ -12,11 +12,11 @@ html,body{
 
 body{
     /*background-color: #160F29;
-    border-top: 5px solid #00FFFF;
-    border-bottom: 5px solid #00FFFF; */
+    border-top: 5px solid #1DDDBD;
+    border-bottom: 5px solid #1DDDBD; */
     box-sizing: border-box;
-    background-color: #160F29;
-    border-bottom: 5px solid #9C62FF;
+    background-color: #F2F2F2;
+    border-bottom: 5px solid #2978FF;
 
 
     
@@ -25,8 +25,8 @@ body{
 }
 
 .image-background{
-    background: rgba(22, 15, 41, 0.9);
-    background-image: url(/public/IMG_1453\ 1.png);
+    /*background: #F2F2F2;*/
+    /*background-image: url(/public/IMG_1453\ 1.png);*/
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
@@ -36,7 +36,7 @@ body{
 
 .content {
     box-sizing: border-box;
-    border-top: 5px solid #9C62FF;
+    border-top: 5px solid #2978FF;
     text-align: center;
     margin: 0;
     min-height: 100%;
@@ -74,7 +74,7 @@ p
 
 .menu-button
 {
-    background-color: #3938F1; 
+    background-color: #2978FF; 
     height: 60px;
     width: 288px;
     margin-bottom: 20px;
@@ -103,50 +103,50 @@ input[type=text],input[type=email],input[type=phone], select {
     width: 300px;
     height: 40px;
     box-sizing: border-box;
-    border: 1px solid #00FFFF;
+    border: 1px solid #1DDDBD;
     border-radius: 6px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 165%;
-    color: #FFFFFF;
+    color: black;
     padding: 9px;
-    background-color: #160F29;
+    background-color: #F2F2F2;
     margin-bottom: 24px;
 }
 
 input::placeholder {
-    color: #FFFFFF;
+    color: black;
 }
 
 .checkboxes-section{
-    border: 1px solid #00FFFF;
+    border: 1px solid #1DDDBD;
     border-radius: 6px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 165%;
-    color: #FFFFFF;
+    color: black;
     text-align: left;
-    background-color: #160F29;
+    background-color: #F2F2F2;
 }
 
 textarea {
     width: 300px;
     height: 100px;
     box-sizing: border-box;
-    border: 1px solid #00FFFF;
+    border: 1px solid #1DDDBD;
     border-radius: 6px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 165%;
-    color: #FFFFFF;
+    color: black;
     padding: 9px;
-    background-color: #160F29;
+    background-color: #F2F2F2;
     margin-bottom: 24px;
 }
 
@@ -163,18 +163,18 @@ input[type=submit] {
     width: 300px;
     height: 44px;
     box-sizing: border-box;
-    border: 1px solid #3938F1;
+    border: 1px solid #2978FF;
     border-radius: 6px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 165%;
-    color: #FFFFFF;
+    color: black;
     padding: 5px;
-    background-color: #160F29;
+    background-color: #F2F2F2;
     margin-bottom: 24px;
-    background: #3938F1;
+    background: #2978FF;
     cursor: pointer;
     margin-top: 24px;
 }
@@ -184,7 +184,7 @@ input[type=submit] {
     box-sizing: border-box;   
     width: 288px;
     height: 205px;
-    border: 1px solid #00FFFF;
+    border: 1px solid #1DDDBD;
     border-radius: 6px;
 }
 
@@ -228,7 +228,7 @@ footer
 {
     height: 52px;
     left: 0px;
-    background: #9C62FF;
+    background: #2978FF;
 }
 
 .logo-websummit
@@ -323,11 +323,11 @@ footer
         left: 0;
         height: 40px;
         width: 40px;
-        border: 1px solid #00FFFF;
+        border: 1px solid #1DDDBD;
         transform: rotate(-45deg);;
     }
     .checkbox input:checked ~ .checkmark {
-        background-color: #00FFFF;
+        background-color: #1DDDBD;
       }
     input[type=submit]{
         float: right;
@@ -339,6 +339,7 @@ footer
     }
     .thanks{
         height: 45vh;
+
     }
     .thanks-square{
         width: 80vw;
@@ -349,16 +350,20 @@ footer
         flex-flow: column;
         border-radius: 18px;
         margin-bottom: 8%;
+        margin-top: 8%;
     }
     .thanks-h1{
         font-size: 4.5rem;
+        color: black;
     }
     .thanks-h2{
         font-size: 3rem;
+        color: black;
     }
     .home-link{
         margin-top: 5%;
         font-size: 2rem;
+        color: #2978FF;
     }
     footer{
         position: fixed;
