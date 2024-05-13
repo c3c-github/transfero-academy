@@ -4,6 +4,9 @@
         <title>C3C Software</title>
         <link rel="stylesheet" href="/public/style.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <script src="/public/jquery.min.js"></script>
+        <script src="/public/jquery.inputmask.min.js"></script>
+    
     </head>    
 
 <body>
@@ -18,11 +21,12 @@
                 <img src="/public/logo-form.png" alt="">
             </div> 
 
-            <form id="transferoForm" action="/submit-form" method="POST">        
+            <form id="form" action="/submit-form" method="POST">        
                     <input type="text" id="name" name="name" placeholder="Nome" required ><br>
                     <input type="text" id="company" name="company" placeholder="Nome de sua empresa" required ><br>
                     <input type="email" id="email" name="email" placeholder="Seu e-mail coorporativo" required ><br>
                     <input type="phone" id="phone" name="phone" placeholder="Seu telefone" required ><br>
+                    <p id="phoneError" style="color: red; display: none;">Por favor, insira um número de telefone válido.</p>
                     <select name="title" id="title" required >
                         <option value="">Nível do cargo</option>
                         <option value="VP">VP Level</option>
@@ -52,10 +56,50 @@
                                 <span class="checkmark"></span>
                             </label>
                         </div>
+                    </div><br>
+                    <div class="checkboxes-section">
+                        <div class="checkboxes-container">
+                            <label for="termos" class="checkbox">Eu aceito receber mensagens de WhatsApp e Emails da C3C Software e Vindi
+                                <input type="checkbox" id="termos" name="termos" checked>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
                     </div>
-                    <input type="submit" value="Enviar"><br>        
+                    <input id="enviar" type="submit" value="Enviar"><br>        
             </form>
         </div>
     </div>
 </body>
+
+<script>
+    $(document).ready(function(){
+        Inputmask({
+            mask: "+55 (99) 99999-9999",  // Máscara para telefone brasileiro
+            placeholder: "_",
+            showMaskOnHover: false,
+            showMaskOnFocus: true
+        }).mask("#phone");
+
+        $('#form').on('submit', function(event) {
+            var telefone = $('#phone').val();
+            var regex = /^\+55 \(\d{2}\) \d{5}-\d{4}$/;  // Expressão regular para validar o formato do telefone
+
+            if (!regex.test(telefone)) {
+                event.preventDefault();  // Impede o envio do formulário
+                $('#phoneError').show();  // Mostra a mensagem de erro
+            } else {
+                $('#phoneError').hide();  // Esconde a mensagem de erro
+            }
+        });
+
+        $('#termos').change(function() {
+            if ($(this).is(':checked')) {
+                $('#enviar').prop('disabled', false);
+            } else {
+                $('#enviar').prop('disabled', true);
+            }
+        });
+    });
+</script>
+
 </html>

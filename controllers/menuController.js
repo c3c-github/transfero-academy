@@ -49,7 +49,7 @@ const thanks = (req, res) => {
                 RecordTypeId : '012N5000001ntcH',
                 LastName : req.body.name,
                 Email : req.body.email,
-                MobilePhone : req.body.phone,
+                MobilePhone : req.body.phone.replace(/\D/g, ''),
                 Description : product,
                 Company : req.body.company,
                 Title : req.body.title
