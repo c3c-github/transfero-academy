@@ -51,7 +51,8 @@ const thanks = (req, res) => {
                 Email : req.body.email,
                 MobilePhone : req.body.phone,
                 Description : product,
-                Company : req.body.company
+                Company : req.body.company,
+                Title : req.body.title
             };  
     
             conn.sobject('Lead').create(lead, function(err, result) {
