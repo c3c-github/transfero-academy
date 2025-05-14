@@ -20,23 +20,44 @@
                         <img src="/public/home.svg" alt="" />
                     </a>
                 </div> -->
-                <div class="logo-menu">
-                    <img src="/public/logo-form.png" alt="" />
-                </div>
-                <h1>&#127873; Participe do sorteio de uma JBL e um iPhone!</h1>
+                
                 <div id="chat">
-                    <div class="chat-container">
-                        <div
-                            v-for="msg in messages"
-                            :key="msg"
-                            :class="`msg ${msg.sender}`"
-                        >
-                            <p>{{ msg.content }}</p>
+                    <div class="logo-menu">
+                        <img src="/public/logo-form.png" alt="" />
+                    </div>
+                    <h1>&#127873; Participe do sorteio de uma JBL e um iPhone!</h1>
+                    <div class="chat-scroll" ref="scroller">
+                        <div class="chat-container">
+                            <div
+                                v-for="msg in messages"
+                                :key="msg"
+                                :class="`msg-container ${msg.sender}`"
+                            >
+                                <div
+                                    :class="`pfp ${msg.sender} ${msg.last?'last':''}`"
+                                ></div>
+                                <div
+                                    :class="`msg ${msg.sender} ${msg.last?'last':''}`"
+                                >
+                                    <p>{{ msg.content }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="chat-input">
+                        <select v-if="inputType=='select'" v-model="msgInput">
+                            <option disabled value="">Nível do cargo</option>
+                            <option value="VP">VP Level</option>
+                            <option value="C">C Level</option>
+                            <option value="Director">Director</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Staff">Staff</option>
+                            <option value="Outros">Outros</option>
+                        </select>
                         <input
+                            v-else
                             v-model="msgInput"
+                            :type="inputType??'text'"
                             @keyup.enter="putMessage"
                             placeholder="Digite aqui..."
                         />
@@ -116,16 +137,22 @@
         </div>
     </body>
     <script>
-        const { createApp, ref } = Vue;
+        const { createApp, useTemplateRef, ref } = Vue;
 
         const promptMsgs = Object.entries({
-            name: "Qual o seu nome?",
-            company: "Qual o nome da empresa em que você trabalha?",
-            title: "Qual o seu cargo?",
-            email: "Me passa um e-mail válido para entrarmos em contato?",
-            phone: "Agora, seu celular com DDD, por favor?",
-            endMsg1:
-                "Cadastro feito! Agora vamos ver como o Salesforce pode te ajudar...",
+            company: {
+                msg: "Qual o nome da empresa em que você trabalha?",
+                type: "text",
+            },
+            title: { msg: "Qual o seu cargo?", type: "select" },
+            email: {
+                msg: "Me passa um e-mail válido para entrarmos em contato?",
+                type: "email",
+            },
+            phone: {
+                msg: "Agora, seu celular com DDD, por favor?",
+                type: "phone",
+            },
         });
 
         const formFields = new Set([
@@ -136,28 +163,69 @@
             "phone",
         ]);
 
+        const endMsgs = [
+            `Centralização de dados dos clientes
+            Salesforce permite reunir todas as informações dos seus clientes em um único lugar, facilitando o atendimento, a personalização e a tomada de decisões estratégicas.`,
+
+            `Automatização de processos comerciais
+            A plataforma automatiza tarefas repetitivas como envio de e-mails, atualizações de pipeline e geração de propostas, permitindo que sua equipe foque no relacionamento com o cliente.`,
+
+            `Aumento da produtividade da equipe de vendas
+            Com ferramentas como o Sales Cloud, seus vendedores têm visibilidade do funil de vendas, histórico de interações e próximos passos, melhorando a eficiência e o desempenho.`,
+
+            `Melhoria no atendimento ao cliente
+            O Service Cloud permite acompanhar chamados, SLA, canais de contato e garantir um suporte mais rápido e eficiente, aumentando a satisfação do cliente.`,
+
+            `Integração com outras ferramentas da empresa
+            Salesforce se conecta facilmente a sistemas legados, ERPs, e outras soluções como e-mail marketing, BI, e plataformas de atendimento, centralizando a operação.`,
+
+            `Visão em tempo real da operação
+            Através de dashboards e relatórios customizáveis, é possível monitorar KPIs e ter uma visão 360º da empresa em tempo real, apoiando decisões estratégicas.`,
+
+            `Personalização do relacionamento com o cliente
+            Com o Marketing Cloud ou Pardot, é possível segmentar, automatizar e personalizar campanhas de marketing com base no comportamento e no perfil dos clientes.`,
+
+            `Escalabilidade e flexibilidade
+            Salesforce cresce com o seu negócio, permitindo a adição de módulos, automações e customizações conforme suas necessidades evoluem.`,
+
+            `Mobilidade para equipes em campo
+            A plataforma pode ser acessada de qualquer lugar por meio do app móvel, facilitando a atuação de vendedores externos, técnicos ou gestores remotos.`,
+
+            `Segurança e conformidade com LGPD
+            Salesforce oferece padrões robustos de segurança e recursos de conformidade, como controle de acesso, criptografia e consentimento, alinhados às exigências da LGPD.`,
+        ];
+
         let currentPrompt = "",
-            currentFormEntry = "";
+            currentFormEntry = "name";
 
         createApp({
             data() {
                 return {
                     messages: [
                         {
-                            content:
-                                "Olá! Vamos fazer seu cadastro para o sorteio?",
+                            content: "Olá! Qual o seu nome?",
                             sender: "page",
+                            last: true,
                         },
                     ],
                     msgInput: "",
                     form: {},
+                    inputType: "text",
                 };
             },
             methods: {
                 putMessage() {
                     console.log("putmessage call");
                     let newInput = this.msgInput;
-                    this.messages.push({ content: newInput, sender: "user" });
+                    if (
+                        this.messages[this.messages.length - 1].sender == "user"
+                    )
+                        this.messages[this.messages.length - 1].last = false;
+                    this.messages.push({
+                        content: newInput,
+                        sender: "user",
+                        last: true,
+                    });
                     this.msgInput = "";
                     if (formFields.has(currentFormEntry)) {
                         this.form[currentFormEntry] = newInput;
@@ -182,11 +250,21 @@
                             body: formBody,
                         }).then((res) => {
                             if (res.status == 200) {
-                                for (const [key, msg] of promptMsgs) {
-                                    console.log(key,msg)
+                                this.messages.push({
+                                    content:
+                                        "Cadastro feito! Agora vamos ver como o Salesforce pode te ajudar...",
+                                    sender: "page",
+                                    last: false,
+                                });
+                                for (let i = 0; i < 3; i++) {
+                                    const msg =
+                                        endMsgs[
+                                            (Math.random() * endMsgs.length) | 0
+                                        ];
                                     this.messages.push({
                                         content: msg,
                                         sender: "page",
+                                        last: i == 2,
                                     });
                                 }
                             } else {
@@ -194,16 +272,32 @@
                                     content:
                                         "Tivemos um problema no seu cadastro, tente novamente!",
                                     sender: "page",
+                                    last: true,
                                 });
                             }
                         });
                     } else {
                         [nxtFormEntry, nxtMsg] = promptMsgs.shift();
                         currentFormEntry = nxtFormEntry;
-                        this.messages.push({ content: nxtMsg, sender: "page" });
+                        this.inputType = nxtMsg.type;
+                        this.messages.push({
+                            content: nxtMsg.msg,
+                            sender: "page",
+                            last: true,
+                        });
                     }
                 },
+                
             },
+            watch:{
+                messages: {
+                    handler(){
+                        console.log('msg update')
+                        this.$refs.scroller.scroll({ behavior: "smooth", top: this.$refs.scroller.scrollHeight})
+                    },
+                    deep:true
+                }
+            }
         }).mount("#chat");
     </script>
 
