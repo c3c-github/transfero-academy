@@ -334,7 +334,7 @@ footer {
 
 @media screen and (max-width: 1024px) {
     body {
-        height: 100vh;
+        height: 100%;
         overflow: hidden;
         min-height: 100vh;
         /* mobile viewport bug fix */
