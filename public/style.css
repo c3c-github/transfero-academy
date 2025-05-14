@@ -434,7 +434,7 @@ footer {
 
     .chat-input input,
     .chat-input select {
-        font-size: 2.1em;
+        font-size: 2.2em;
         padding: 25px 25px;
         flex-grow: 1;
         border: 6px solid #64d8c5;
