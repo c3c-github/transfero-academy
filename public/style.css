@@ -5,31 +5,30 @@
     cursor: pointer;
 }
 
-html,body{
+html,
+body {
     margin: 0;
 }
 
-body{
+body {
     /*background-color: #160F29;
     border-top: 5px solid #1DDDBD;
     border-bottom: 5px solid #1DDDBD; */
     box-sizing: border-box;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
 }
 
-.image-background{
+.image-background {
     /*background: #F2F2F2;*/
     /*background-image: url(/public/IMG_1453\ 1.png);*/
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
-    
 }
-
 
 .content {
     box-sizing: border-box;
-    border-top: 5px solid #2978FF;
+    border-top: 5px solid #2978ff;
     text-align: center;
     margin: 0;
     min-height: 100%;
@@ -38,43 +37,40 @@ body{
     justify-content: center;
 }
 
-
-
-.logo-menu
-{
+.logo-menu {
     height: 60px;
     margin-top: 21px;
 }
 
-h1{
-    font-family: 'Montserrat',Sans-serif;
+h1 {
+    font-family: "Montserrat", Sans-serif;
     font-weight: 600;
     margin: 30px 0;
     font-size: 1.8em;
 }
 
-.logo-menu img{
+.logo-menu img {
     height: 100%;
 }
 
-.chat-scroll{
+.chat-scroll {
     overflow: auto;
     /* height: 100px; */
     display: flex;
     flex-direction: column-reverse;
 }
 
-.chat-container{
+.chat-container {
     display: flex;
     flex-flow: column;
     /* justify-content: end; */
-    border: 3px solid #2978FF;
+    border: 3px solid #2978ff;
     border-radius: 22px;
     /* min-height: 30vh; */
     padding: 15px 15px 30px;
 }
 
-.msg-container{
+.msg-container {
     display: flex;
     margin: 10px 0;
 }
@@ -83,16 +79,15 @@ h1{
     margin-top: auto;
 } */
 
-.msg-container.user{
+.msg-container.user {
     flex-flow: row-reverse;
 }
-.pfp{
+.pfp {
     width: 40px;
     height: 40px;
-    
 }
 
-.pfp.last{
+.pfp.last {
     background-size: contain;
     border-radius: 50%;
     background-position: center;
@@ -101,11 +96,11 @@ h1{
     align-self: end;
 }
 
-.pfp.last.page{
-    background-image: url('/public/mascot.jpeg');
+.pfp.last.page {
+    background-image: url("/public/mascot.jpeg");
 }
-.pfp.last.user{
-    background-image: url('/public/salesforce_logo.svg');
+.pfp.last.user {
+    background-image: url("/public/salesforce_logo.svg");
 }
 .msg {
     max-width: 80%;
@@ -113,45 +108,45 @@ h1{
     margin: 2px;
 }
 
-.msg.page.last{
+.msg.page.last {
     border-bottom-left-radius: 0;
 }
 
-.msg.page{
-    background-color:#2978FF;
-    color:#fff
-
+.msg.page {
+    background-color: #2978ff;
+    color: #fff;
 }
 
-.msg.user{
-    background-color: #1DDDBD;
+.msg.user {
+    background-color: #1dddbd;
 }
 
-.msg.user.last{
+.msg.user.last {
     border-bottom-right-radius: 0;
 }
 
-.chat-input{
-    width:100;
+.chat-input {
+    width: 100;
     margin: 25px 0;
     display: flex;
     justify-content: center;
 }
 
-.chat-input input, .chat-input select{
+.chat-input input,
+.chat-input select {
     background-color: #f2f2f2;
-    border: 3px solid #1DDDBD;
-    border-radius:16px;
+    border: 3px solid #1dddbd;
+    border-radius: 16px;
     padding: 7px 15px;
     width: 65%;
 }
 
-.chat-input input::placeholder{
+.chat-input input::placeholder {
     color: #666;
 }
 
-.chat-input button{
-    background-color: #1DDDBD;
+.chat-input button {
+    background-color: #1dddbd;
     margin: 0 5px;
     border: none;
     border-radius: 50%;
@@ -161,34 +156,29 @@ h1{
     justify-content: center;
     align-items: center;
     padding: 4px;
-
 }
 
-.line-menu
-{
+.line-menu {
     height: 12px;
-    margin-top:20px;
+    margin-top: 20px;
 }
 
-.menu-title
-{
+.menu-title {
     color: white;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-size: 13px;
     text-align: center;
 }
 
-p
-{
-    font-family: 'Montserrat', sans-serif;
-    font-size: .9em;
-    margin:7px 15px;
+p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9em;
+    margin: 7px 15px;
 }
 
-.menu-button
-{
-    background-color: #2978FF; 
+.menu-button {
+    background-color: #2978ff;
     height: 60px;
     width: 288px;
     margin-bottom: 20px;
@@ -197,16 +187,15 @@ p
 }
 
 .button {
-       
     color: white;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;    
+    display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
-    
-    font-family: 'Montserrat';
+
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -234,128 +223,129 @@ input::placeholder {
     color: black;
 }
 
-.checkboxes-section{
-    border: 1px solid #1DDDBD;
+.checkboxes-section {
+    border: 1px solid #1dddbd;
     border-radius: 6px;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 165%;
     color: black;
     text-align: left;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
 }
 
 textarea {
     width: 300px;
     height: 100px;
     box-sizing: border-box;
-    border: 1px solid #1DDDBD;
+    border: 1px solid #1dddbd;
     border-radius: 6px;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 165%;
     color: black;
     padding: 9px;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     margin-bottom: 24px;
 }
 
 textarea::placeholder {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-button [type="submit"]
-{
+button [type="submit"] {
     color: red;
 }
 
-input[type=submit] {
+input[type="submit"] {
     width: 300px;
     height: 44px;
     box-sizing: border-box;
-    border: 1px solid #2978FF;
+    border: 1px solid #2978ff;
     border-radius: 6px;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 165%;
     color: black;
     padding: 5px;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     margin-bottom: 24px;
-    background: #2978FF;
+    background: #2978ff;
     cursor: pointer;
     margin-top: 24px;
     color: white;
 }
 
-.thanks-square
-{
-    box-sizing: border-box;   
+.thanks-square {
+    box-sizing: border-box;
     width: 288px;
     height: 205px;
-    border: 1px solid #1DDDBD;
+    border: 1px solid #1dddbd;
     border-radius: 6px;
 }
 
-.thanks-h1
-{
-    font-family: 'Montserrat';
+.thanks-h1 {
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 500;
     line-height: 49px;
     text-align: center;
     letter-spacing: 0.03em;
-    color: #FFFFFF;
+    color: #ffffff;
     line-height: inherit;
 }
 
-.thanks-h2
-{  
-    font-family: 'Montserrat';
+.thanks-h2 {
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
     text-align: center;
-    color: #FFFFFE;
+    color: #fffffe;
 }
 
-.home-link
-{
-    font-family: 'Montserrat';
+.home-link {
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
     line-height: 165%;
     text-align: center;
     text-decoration-line: underline;
-    color: #FFFFFF;    
+    color: #ffffff;
 }
 
-footer
-{
+footer {
     height: 52px;
     left: 0px;
-    background: #2978FF;
+    background: #2978ff;
 }
 
-.logo-websummit
-{
+.logo-websummit {
     height: 16.82px;
-    padding: 17px;   
+    padding: 17px;
 }
 
-@media screen and (max-width: 1024px){
-    body{
+@media screen and (max-width: 1024px) {
+    body {
         height: 100vh;
         overflow: hidden;
+        min-height: 100vh;
+        /* mobile viewport bug fix */
+        min-height: -webkit-fill-available;
     }
-    .image-background, .content{
+
+    html {
+        height: -webkit-fill-available;
+    }
+    .image-background,
+    .content {
         height: 100%;
     }
     .content {
@@ -363,55 +353,54 @@ footer
         display: flex;
         flex-flow: column;
     }
-    .logo-menu{
+    .logo-menu {
         height: auto;
     }
-    .logo-menu img{
+    .logo-menu img {
         width: 55%;
     }
-    .logo-menu.main img{
+    .logo-menu.main img {
         width: 80%;
     }
-    h1{
+    h1 {
         font-size: 3em;
     }
-    .line-menu{
+    .line-menu {
         height: auto;
         margin: 80px 0;
     }
-    .line-menu img{
+    .line-menu img {
         width: 40%;
         height: auto;
         align-self: center;
     }
 
-    #chat{
-
+    #chat {
         display: flex;
         flex-flow: column;
         height: 100%;
         padding-bottom: 5%;
     }
 
-    .chat-scroll{
+    .chat-scroll {
         flex-grow: 1;
     }
 
-    .chat-container{
+    .chat-container {
         /* border: 6px solid #5491d8;
         border-radius: 22px; */
-        border:none;
+        border: none;
         /* min-height: 35vh; */
         /* max-height: 65vh; */
         padding: 15px 15px 30px;
         /* overflow: scroll; */
     }
 
-    .msg-container{
-        margin:5px
+    .msg-container {
+        margin: 5px;
     }
 
-    .pfp{
+    .pfp {
         width: 110px;
         height: 110px;
         min-width: 110px;
@@ -424,19 +413,20 @@ footer
         border-radius: 35px;
     }
 
-    p{
+    p {
         font-size: 2.1em;
         margin: 25px 25px;
         text-align: left;
     }
 
-    .chat-input{
-       align-self: end;
-       bottom: 0%;
-       width: 100%;
+    .chat-input {
+        align-self: end;
+        bottom: 0%;
+        width: 100%;
     }
 
-    .chat-input input, .chat-input select{
+    .chat-input input,
+    .chat-input select {
         font-size: 2.1em;
         padding: 25px 25px;
         flex-grow: 1;
@@ -444,10 +434,8 @@ footer
         border-radius: 35px;
     }
 
-    .chat-input button{
-        
+    .chat-input button {
         margin: 0 8px;
-
 
         height: 110px;
         width: 110px;
@@ -455,14 +443,13 @@ footer
         justify-content: center;
         align-items: center;
         padding: 12px;
-    
     }
-    
-    .menu-title{
+
+    .menu-title {
         font-size: 2.2rem;
         margin: 40px 0;
     }
-    .menu-button{
+    .menu-button {
         width: 100%;
         height: auto;
         padding: 25px 0;
@@ -489,24 +476,24 @@ footer
         margin: 5% 0;
         border-radius: 12px;
     } */
-    .checkboxes-section{
+    .checkboxes-section {
         font-size: 2.2rem;
         padding: 3% 5%;
     }
-    .checkboxes-section p{
+    .checkboxes-section p {
         text-align: left;
         margin: 0%;
         padding-bottom: 3%;
     }
-    .checkboxes-container{
+    .checkboxes-container {
         display: flex;
         flex-flow: row wrap;
     }
-    .checkbox{
+    .checkbox {
         position: relative;
-        padding: 0 80px 3%; 
+        padding: 0 80px 3%;
     }
-    .checkbox input{
+    .checkbox input {
         position: absolute;
         opacity: 0;
         cursor: pointer;
@@ -519,13 +506,13 @@ footer
         left: 0;
         height: 40px;
         width: 40px;
-        border: 1px solid #1DDDBD;
-        transform: rotate(-45deg);;
+        border: 1px solid #1dddbd;
+        transform: rotate(-45deg);
     }
     .checkbox input:checked ~ .checkmark {
-        background-color: #1DDDBD;
-      }
-    input[type=submit]{
+        background-color: #1dddbd;
+    }
+    input[type="submit"] {
         float: right;
         font-size: 2.5rem;
         height: auto;
@@ -534,16 +521,15 @@ footer
         width: 50%;
     }
 
-    input[type=submit]:disabled {
+    input[type="submit"]:disabled {
         background-color: #cccccc; /* Cor de fundo cinza */
         cursor: not-allowed; /* Cursor de erro */
     }
-    
-    .thanks{
-        height: 45vh;
 
+    .thanks {
+        height: 45vh;
     }
-    .thanks-square{
+    .thanks-square {
         width: 80vw;
         height: 50vw;
         display: flex;
@@ -554,20 +540,20 @@ footer
         margin-bottom: 8%;
         margin-top: 8%;
     }
-    .thanks-h1{
+    .thanks-h1 {
         font-size: 2rem;
         color: black;
     }
-    .thanks-h2{
+    .thanks-h2 {
         font-size: 1rem;
         color: black;
     }
-    .home-link{
+    .home-link {
         margin-top: 5%;
         font-size: 2rem;
-        color: #2978FF;
+        color: #2978ff;
     }
-    footer{
+    footer {
         position: fixed;
         bottom: 0;
         width: 100%;
@@ -576,8 +562,7 @@ footer
         justify-content: center;
         height: 5%;
     }
-    .logo-websummit{
+    .logo-websummit {
         height: 40%;
     }
-    
 }
