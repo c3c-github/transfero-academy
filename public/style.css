@@ -332,6 +332,12 @@ footer {
     padding: 17px;
 }
 
+@supports (-webkit-overflow-scrolling: touch) {
+    input, select {
+      font-size: 16px;
+    }
+ }
+
 @media screen and (max-width: 1024px) {
     body {
         height: 100%;
